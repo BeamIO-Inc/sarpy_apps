@@ -18,7 +18,6 @@ from sarpy_apps.apps.aperture_tool.panels.selected_region_popup.selected_region_
 from sarpy_apps.supporting_classes.metaicon import MetaIcon
 from sarpy_apps.supporting_classes.complex_image_reader import ComplexImageReader
 from sarpy_apps.apps.aperture_tool.panels.phase_history_selecion_panel.phase_history_selection_panel import PhaseHistoryPanel
-from sarpy_apps.apps.aperture_tool.app_variables import AppVariables
 from sarpy_apps.supporting_classes.metaviewer import Metaviewer
 from sarpy_apps.apps.aperture_tool.panels.frequency_vs_degree_panel.frequency_vs_degree_panel import FrequencyVsDegreePanel
 from sarpy_apps.apps.aperture_tool.panels.animation_popup.animation_panel import AnimationPanel
@@ -26,6 +25,8 @@ from sarpy_apps.apps.aperture_tool.panels.animation_popup.animation_panel import
 from sarpy.io.complex.base import BaseReader
 import scipy.constants.constants as scipy_constants
 from tkinter.filedialog import asksaveasfilename
+
+from sarpy_apps.apps.aperture_tool.app_variables import AppVariables
 
 
 class ApertureTool(AbstractWidgetPanel):
