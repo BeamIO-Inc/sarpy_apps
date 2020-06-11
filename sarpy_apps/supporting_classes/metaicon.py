@@ -35,7 +35,7 @@ class MetaIcon(ImageCanvasPanel):
     def create_from_sicd(self,
                          sicd_meta,     # type: SICDType
                          ):
-        metaicon_background = numpy.zeros((self.canvas.canvas_height, self.canvas.canvas_width))
+        metaicon_background = numpy.zeros((self.canvas.variables.canvas_height, self.canvas.variables.canvas_width))
         numpy_reader = NumpyImageReader(metaicon_background)
         self.canvas.set_image_reader(numpy_reader)
 
@@ -73,8 +73,8 @@ class MetaIcon(ImageCanvasPanel):
         self.draw_arrow("multipath")
         self.draw_arrow("north")
 
-        flight_direction_arrow_start = (self.canvas.canvas_width * 0.65, self.canvas.canvas_height * 0.9)
-        flight_direction_arrow_end = (self.canvas.canvas_width * 0.95, flight_direction_arrow_start[1])
+        flight_direction_arrow_start = (self.canvas.variables.canvas_width * 0.65, self.canvas.variables.canvas_height * 0.9)
+        flight_direction_arrow_end = (self.canvas.variables.canvas_width * 0.95, flight_direction_arrow_start[1])
         if self.meta.SCPCOA.SideOfTrack == "R":
             self.canvas.create_new_arrow((flight_direction_arrow_start[0],
                                    flight_direction_arrow_start[1],
@@ -85,7 +85,7 @@ class MetaIcon(ImageCanvasPanel):
                                    flight_direction_arrow_end[1],
                                    flight_direction_arrow_start[0],
                                    flight_direction_arrow_start[1]), fill=self.flight_direction_color, width=3)
-        self.canvas.create_text((flight_direction_arrow_start[0] - self.canvas.canvas_width * 0.04,
+        self.canvas.create_text((flight_direction_arrow_start[0] - self.canvas.variables.canvas_width * 0.04,
                                  flight_direction_arrow_start[1]),
                                 text="R",
                                 fill=self.flight_direction_color,
@@ -98,8 +98,8 @@ class MetaIcon(ImageCanvasPanel):
 
     def _get_line_positions(self, margin_percent=5):
         n_lines = 9
-        height = self.canvas.canvas_height
-        width = self.canvas.canvas_width
+        height = self.canvas.variables.canvas_height
+        width = self.canvas.variables.canvas_width
         margin = height * (margin_percent*0.01*2)
         top_margin = margin/2
         height_w_margin = height - margin
@@ -297,8 +297,8 @@ class MetaIcon(ImageCanvasPanel):
 
         arrow_rad = numpy.deg2rad(arrow)
 
-        arrow_length_old = self.canvas.canvas_width * 0.15
-        arrows_origin = (self.canvas.canvas_width * 0.75, self.canvas.canvas_height * 0.6)
+        arrow_length_old = self.canvas.variables.canvas_width * 0.15
+        arrows_origin = (self.canvas.variables.canvas_width * 0.75, self.canvas.variables.canvas_height * 0.6)
 
         # adjust aspect ratio in the case we're dealing with circular polarization from RCM
         pixel_aspect_ratio = 1.0

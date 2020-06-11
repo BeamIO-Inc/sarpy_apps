@@ -59,7 +59,7 @@ class Ortho(AbstractWidgetPanel):
 
     def callback_display_ortho_image(self, event):
         ortho_object = QuickOrtho(self.raw_frame_image_panel, self.image_reader)
-        orthod_image = ortho_object.create_ortho(self.ortho_image_panel.canvas.canvas_height, self.ortho_image_panel.canvas.canvas_width)
+        orthod_image = ortho_object.create_ortho(self.ortho_image_panel.canvas.variables.canvas_height, self.ortho_image_panel.canvas.variables.canvas_width)
         self.ortho_image_panel.canvas.set_image_from_numpy_array(orthod_image)
 
 

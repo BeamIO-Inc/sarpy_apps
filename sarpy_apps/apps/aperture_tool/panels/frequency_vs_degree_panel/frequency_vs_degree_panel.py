@@ -1,5 +1,5 @@
 import tkinter
-from tkbuilder.widgets.image_canvas.image_canvas import ImageCanvas
+from tkbuilder.widgets.image_canvas import ImageCanvas
 import numpy
 
 
@@ -8,8 +8,6 @@ class FrequencyVsDegreePanel(tkinter.LabelFrame):
                  left_margin=0.15, right_margin=0,
                  top_margin=0.1, bottom_margin=0.25):
         tkinter.LabelFrame.__init__(self, parent)
-        self.image_data = numpy.random.random((canvas_height, canvas_width))
-
         # default dpi is 100, so npix will be 100 times the numbers passed to figsize
 
         self.labels_canvas = ImageCanvas(self)
@@ -30,7 +28,7 @@ class FrequencyVsDegreePanel(tkinter.LabelFrame):
         image_width = numpy.shape(display_image)[1]
         left_pixel_index = self.x_margin + 2
         right_pixel_index = self.x_margin + image_width
-        bottom_pixel_index = self.y_margin + self.canvas.canvas_height + 20
+        bottom_pixel_index = self.y_margin + self.canvas.variables.canvas_height + 20
         label_y_index = bottom_pixel_index + 30
 
         tick_vals = numpy.linspace(start_val, stop_val, n_ticks)
@@ -54,7 +52,7 @@ class FrequencyVsDegreePanel(tkinter.LabelFrame):
         left_pixel_index = self.x_margin - 40
         right_pixel_index = self.x_margin + image_width
         top_pixel_index = self.y_margin
-        bottom_pixel_index = self.y_margin + self.canvas.canvas_height
+        bottom_pixel_index = self.y_margin + self.canvas.variables.canvas_height
         label_x_index = left_pixel_index - 30
 
         tick_vals = numpy.linspace(stop_val, start_val, n_ticks)

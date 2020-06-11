@@ -52,7 +52,7 @@ class Taser(AbstractWidgetPanel):
     def callback_left_mouse_release(self, event):
         self.taser_image_panel.canvas.callback_handle_left_mouse_release(event)
         if self.taser_image_panel.canvas.variables.current_tool == self.taser_image_panel.canvas.TOOLS.SELECT_TOOL:
-            self.taser_image_panel.canvas.zoom_to_selection((0, 0, self.taser_image_panel.canvas.canvas_width, self.taser_image_panel.canvas.canvas_height), animate=False)
+            self.taser_image_panel.canvas.zoom_to_selection((0, 0, self.taser_image_panel.canvas.variables.canvas_width, self.taser_image_panel.canvas.variables.canvas_height), animate=False)
             self.display_canvas_rect_selection_in_pyplot_frame()
 
     def callback_set_to_zoom_in(self, event):
