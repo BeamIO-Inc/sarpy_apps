@@ -1,6 +1,6 @@
 import tkinter
-from tkinter_gui_builder.panel_templates.widget_panel.widget_panel import AbstractWidgetPanel
-from tkinter_gui_builder.widgets import basic_widgets
+from tkbuilder.panel_templates.widget_panel.widget_panel import AbstractWidgetPanel
+from tkbuilder.widgets import basic_widgets
 
 
 class ModePanel(AbstractWidgetPanel):

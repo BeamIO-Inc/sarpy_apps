@@ -1,11 +1,11 @@
 import tkinter
-from sarpy_gui_apps.apps.wake_tool.panels.side_panel import SidePanel
-from tkinter_gui_builder.panel_templates.image_canvas_panel.image_canvas_panel import ImageCanvasPanel
+from sarpy_apps.apps.wake_tool.panels.side_panel import SidePanel
+from tkbuilder.panel_templates.image_canvas_panel.image_canvas_panel import ImageCanvasPanel
 import tkinter.colorchooser as colorchooser
-from tkinter_gui_builder.panel_templates.widget_panel.widget_panel import AbstractWidgetPanel
+from tkbuilder.panel_templates.widget_panel.widget_panel import AbstractWidgetPanel
 import sarpy.geometry.point_projection as point_projection
 import sarpy.geometry.geocoords as geocoords
-from sarpy_gui_apps.supporting_classes.complex_image_reader import ComplexImageReader
+from sarpy_apps.supporting_classes.complex_image_reader import ComplexImageReader
 import numpy as np
 import math
 

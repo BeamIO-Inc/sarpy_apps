@@ -1,6 +1,6 @@
-from tkinter_gui_builder.panel_templates.widget_panel.widget_panel import AbstractWidgetPanel
-from tkinter_gui_builder.widgets import basic_widgets
-from tkinter_gui_builder.panel_templates.file_selector.file_selector import FileSelector
+from tkbuilder.panel_templates.widget_panel.widget_panel import AbstractWidgetPanel
+from tkbuilder.widgets import basic_widgets
+from tkbuilder.panel_templates.file_selector.file_selector import FileSelector
 
 
 class ChipSizePanel(AbstractWidgetPanel):

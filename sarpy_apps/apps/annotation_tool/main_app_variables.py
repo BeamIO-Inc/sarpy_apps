@@ -1,7 +1,7 @@
 from sarpy.annotation.annotate import FileAnnotationCollection
 from sarpy.annotation.schema_processing import LabelSchema
 from sarpy.annotation.annotate import Annotation
-from tkinter_gui_builder.panel_templates.image_canvas_panel.image_canvas_panel import ImageCanvasPanel
+from tkbuilder.panel_templates.image_canvas_panel.image_canvas_panel import ImageCanvasPanel
 import os
 
 

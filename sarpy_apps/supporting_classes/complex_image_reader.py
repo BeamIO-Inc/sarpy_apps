@@ -1,4 +1,4 @@
-from tkinter_gui_builder.image_readers.image_reader import ImageReader
+from tkbuilder.image_readers.image_reader import ImageReader
 import sarpy.io.complex as sarpy_complex
 from sarpy.io.complex.base import BaseReader
 import sarpy.visualization.remap as remap

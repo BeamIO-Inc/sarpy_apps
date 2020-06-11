@@ -1,6 +1,6 @@
-from sarpy_gui_apps.apps.annotation_tool.panels.annotate_image_panel.annotate_dashboard.annotate_dashboard import AnnotateDash
-from tkinter_gui_builder.panel_templates.image_canvas_panel.image_canvas_panel import ImageCanvasPanel
-from tkinter_gui_builder.panel_templates.widget_panel.widget_panel import AbstractWidgetPanel
+from sarpy_apps.apps.annotation_tool.panels.annotate_image_panel.annotate_dashboard.annotate_dashboard import AnnotateDash
+from tkbuilder.panel_templates.image_canvas_panel.image_canvas_panel import ImageCanvasPanel
+from tkbuilder.panel_templates.widget_panel.widget_panel import AbstractWidgetPanel
 
 
 class AppVariables:

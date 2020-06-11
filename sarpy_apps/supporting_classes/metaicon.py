@@ -7,10 +7,10 @@ from sarpy.io.complex.sicd import SICDType
 from sarpy.geometry import geocoords
 from scipy.constants import constants
 import numpy
-from tkinter_gui_builder.panel_templates.image_canvas_panel.image_canvas_panel import ImageCanvasPanel
-import tkinter_gui_builder.utils.color_utils.color_converter as color_converter
+from tkbuilder.panel_templates.image_canvas_panel.image_canvas_panel import ImageCanvasPanel
+import tkbuilder.utils.color_utils.color_converter as color_converter
 from sarpy.geometry import latlon
-from tkinter_gui_builder.image_readers.numpy_image_reader import NumpyImageReader
+from tkbuilder.image_readers.numpy_image_reader import NumpyImageReader
 
 
 class MetaIcon(ImageCanvasPanel):

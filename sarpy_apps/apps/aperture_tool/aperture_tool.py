@@ -6,25 +6,26 @@ from scipy.fftpack import fft2, ifft2, fftshift
 import tkinter
 from tkinter import filedialog
 from tkinter import Menu
-from tkinter_gui_builder.panel_templates.widget_panel.widget_panel import AbstractWidgetPanel
-from tkinter_gui_builder.utils.image_utils import frame_sequence_utils
-from tkinter_gui_builder.panel_templates.image_canvas_panel.image_canvas_panel import ImageCanvasPanel
+from tkbuilder.panel_templates.widget_panel.widget_panel import AbstractWidgetPanel
+from tkbuilder.utils.image_utils import frame_sequence_utils
+from tkbuilder.panel_templates.image_canvas_panel.image_canvas_panel import ImageCanvasPanel
+from tkbuilder.image_readers.numpy_image_reader import NumpyImageReader
 
 import sarpy.io.complex as sarpy_complex
 import sarpy.visualization.remap as remap
-from sarpy_gui_apps.apps.aperture_tool.panels.image_info_panel.image_info_panel import ImageInfoPanel
-from sarpy_gui_apps.apps.aperture_tool.panels.selected_region_popup.selected_region_popup import SelectedRegionPanel
-from sarpy_gui_apps.supporting_classes.metaicon import MetaIcon
-from sarpy_gui_apps.supporting_classes.complex_image_reader import ComplexImageReader
-from sarpy_gui_apps.apps.aperture_tool.panels.phase_history_selecion_panel.phase_history_selection_panel import PhaseHistoryPanel
-from sarpy_gui_apps.apps.aperture_tool.app_variables import AppVariables
+from sarpy_apps.apps.aperture_tool.panels.image_info_panel.image_info_panel import ImageInfoPanel
+from sarpy_apps.apps.aperture_tool.panels.selected_region_popup.selected_region_popup import SelectedRegionPanel
+from sarpy_apps.supporting_classes.metaicon import MetaIcon
+from sarpy_apps.supporting_classes.complex_image_reader import ComplexImageReader
+from sarpy_apps.apps.aperture_tool.panels.phase_history_selecion_panel.phase_history_selection_panel import PhaseHistoryPanel
+from sarpy_apps.apps.aperture_tool.app_variables import AppVariables
+from sarpy_apps.supporting_classes.metaviewer import Metaviewer
+from sarpy_apps.apps.aperture_tool.panels.frequency_vs_degree_panel.frequency_vs_degree_panel import FrequencyVsDegreePanel
+from sarpy_apps.apps.aperture_tool.panels.animation_popup.animation_panel import AnimationPanel
+
 from sarpy.io.complex.base import BaseReader
 import scipy.constants.constants as scipy_constants
-from tkinter_gui_builder.image_readers.numpy_image_reader import NumpyImageReader
-from sarpy_gui_apps.supporting_classes.metaviewer import Metaviewer
 from tkinter.filedialog import asksaveasfilename
-from sarpy_gui_apps.apps.aperture_tool.panels.frequency_vs_degree_panel.frequency_vs_degree_panel import FrequencyVsDegreePanel
-from sarpy_gui_apps.apps.aperture_tool.panels.animation_popup.animation_panel import AnimationPanel
 
 
 class ApertureTool(AbstractWidgetPanel):

@@ -1,5 +1,5 @@
 import tkinter
-from tkinter_gui_builder.widgets.image_canvas.image_canvas import ImageCanvas
+from tkbuilder.widgets.image_canvas.image_canvas import ImageCanvas
 import numpy
 
 

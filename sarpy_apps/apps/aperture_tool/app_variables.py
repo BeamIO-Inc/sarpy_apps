@@ -1,5 +1,5 @@
 import numpy
-from sarpy_gui_apps.supporting_classes.complex_image_reader import ComplexImageReader
+from sarpy_apps.supporting_classes.complex_image_reader import ComplexImageReader
 
 
 class AppVariables:
