@@ -15,7 +15,7 @@ import sarpy.io.complex as sarpy_complex
 import sarpy.visualization.remap as remap
 from sarpy_apps.apps.aperture_tool.panels.image_info_panel.image_info_panel import ImageInfoPanel
 from sarpy_apps.apps.aperture_tool.panels.selected_region_popup.selected_region_popup import SelectedRegionPanel
-from sarpy_apps.supporting_classes.metaicon import MetaIcon
+from sarpy_apps.supporting_classes.metaicon.metaicon import MetaIcon
 from sarpy_apps.supporting_classes.complex_image_reader import ComplexImageReader
 from sarpy_apps.apps.aperture_tool.panels.phase_history_selecion_panel.phase_history_selection_panel import PhaseHistoryPanel
 from sarpy_apps.supporting_classes.metaviewer import Metaviewer
@@ -25,6 +25,7 @@ from sarpy_apps.apps.aperture_tool.panels.animation_popup.animation_panel import
 from sarpy.io.complex.base import BaseReader
 import scipy.constants.constants as scipy_constants
 from tkinter.filedialog import asksaveasfilename
+from sarpy_apps.supporting_classes.metaicon.sicd_metaicon_helper import SicdMetaIconHelper
 
 from sarpy_apps.apps.aperture_tool.app_variables import AppVariables
 
@@ -71,7 +72,7 @@ class ApertureTool(AbstractWidgetPanel):
         self.metaicon = MetaIcon(self.metaicon_popup_panel)
         self.metaicon.set_canvas_size(800, 600)
         self.metaicon.pack()
-        self.metaicon_popup_panel.withdraw()
+        # self.metaicon_popup_panel.withdraw()
 
         self.metaviewer_popup_panel = tkinter.Toplevel(self.master)
         self.metaviewer = Metaviewer(self.metaviewer_popup_panel)
@@ -119,7 +120,7 @@ class ApertureTool(AbstractWidgetPanel):
         self.pack()
 
     def callback_select_resolution_mode(self, event):
-        print("hhellllooo!!!!")
+        print("selection resolution mode")
 
     def save_metaicon(self):
         save_fname = asksaveasfilename(initialdir=os.path.expanduser("~"), filetypes=[("*.png", ".PNG")])
@@ -329,7 +330,10 @@ class ApertureTool(AbstractWidgetPanel):
         self.app_variables.sicd_fname = sicd_fname
         self.app_variables.sicd_reader_object = sarpy_complex.open(sicd_fname)
 
-        self.metaicon.create_from_sicd(self.app_variables.sicd_reader_object.sicd_meta)
+        meticon_helper = SicdMetaIconHelper(self.app_variables.sicd_reader_object.sicd_meta)
+        data_container = meticon_helper.data_container
+
+        self.metaicon.create_from_metaicon_data_container(data_container)
 
         popup = tkinter.Toplevel(self.master)
         selected_region_popup = SelectedRegionPanel(popup, self.app_variables)
